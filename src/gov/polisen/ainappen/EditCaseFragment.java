@@ -19,8 +19,8 @@ import android.widget.Spinner;
 
 public class EditCaseFragment extends Fragment {
 
-	private Case	selectedCase;
-	private View	rootView;
+	private Case selectedCase;
+	private View rootView;
 
 	public EditCaseFragment() {
 		// Empty constructor required for fragment subclasses
@@ -30,8 +30,7 @@ public class EditCaseFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		selectedCase = ((MainActivity) getActivity()).getSelectedCase();
-		rootView = inflater.inflate(R.layout.fragment_edit_case, container,
-				false);
+		rootView = inflater.inflate(R.layout.fragment_edit_case, container, false);
 		getActivity().setTitle("Redigera ärende");
 		setUpLowLevelFragment();
 
@@ -61,8 +60,7 @@ public class EditCaseFragment extends Fragment {
 	}
 
 	/**
-	 * Shows a popup where the user can choose if wanting to save changes or
-	 * not,
+	 * Shows a popup where the user can choose if wanting to save changes or not,
 	 */
 	private void showSaveOptionsPopUp() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -88,8 +86,8 @@ public class EditCaseFragment extends Fragment {
 	}
 
 	/*
-	 * Needs to be included in low level fragments Low level fragments =
-	 * fragments that is not in main drawer menu.
+	 * Needs to be included in low level fragments Low level fragments = fragments
+	 * that is not in main drawer menu.
 	 */
 	private void setUpLowLevelFragment() {
 		// needed to indicate that the fragment would like to add items to the
@@ -110,7 +108,8 @@ public class EditCaseFragment extends Fragment {
 				getActivity(), R.array.case_status,
 				android.R.layout.simple_spinner_item);
 		// Specify the layout to use when the list of choices appears
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		adapter
+				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		// Apply the adapter to the spinner
 		spinner.setAdapter(adapter);
 	}
@@ -129,8 +128,7 @@ public class EditCaseFragment extends Fragment {
 		selectedCase.setLocation(location.getText().toString());
 		EditText commander = (EditText) rootView
 				.findViewById(R.id.commander_text_edit);
-		selectedCase.setCommander(Integer.parseInt(commander.getText()
-				.toString()));
+		selectedCase.setCommander(Integer.parseInt(commander.getText().toString()));
 		Spinner status = (Spinner) rootView.findViewById(R.id.spinner_status);
 		selectedCase.setStatus(status.getSelectedItem().toString());
 		EditText description = (EditText) rootView

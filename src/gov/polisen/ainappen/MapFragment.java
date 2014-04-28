@@ -90,7 +90,7 @@ public class MapFragment extends Activity implements LocationListener {
 
 					Log.w("AinAppen", "Vår tryckta location är " + touchedLocation);
 					Toast.makeText(getApplicationContext(),
-							"Location är" + touchedLocation, Toast.LENGTH_LONG).show();
+							"Location är " + touchedLocation, Toast.LENGTH_LONG).show();
 
 					OverlayItem touchedItem = new OverlayItem("Test", "TestText",
 							touchedLocation);
